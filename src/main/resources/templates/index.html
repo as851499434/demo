@@ -1,0 +1,56 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <script src="./js/jquery.min.js"></script>-->
+<!--    <script src="./js/index.js"></script>-->
+<!--    <title>html 引入 jquery</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="div" >-->
+<!--    账号: <input></input>-->
+<!--    密码: <input></input>-->
+<!--</div>-->
+
+<!--<div style="min-height: 1000px;">-->
+<!--    &lt;!&ndash; 图片 &ndash;&gt;-->
+<!--    验证码: <input></input>-->
+<!--    <img id="img" src="" alt="加载中" onclick="getInmage()">-->
+<!--</div>-->
+
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<!--    <script src="../static/js/jquery.min.js"></script>-->
+<!--    <script src="../static/js/index.js"></script>-->
+<!--    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />-->
+
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/index.js}"></script>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <form method="post">
+        <img  src="">
+        <input autocomplete="off" type="text" required="required" placeholder="用户名" name="u"></input>
+        <input autocomplete="off" type="password" required="required" placeholder="密码" name="p"></input>
+        <input autocomplete="off" required="required" placeholder="验证码" name="c"></input> <img id="img" src="" alt="加载中" onclick="getInmage()">
+        <button class="but" type="submit">登录</button>
+    </form>
+</div>
+</body>
+</html>
