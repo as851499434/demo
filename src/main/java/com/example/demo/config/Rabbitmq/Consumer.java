@@ -17,10 +17,11 @@ import java.util.concurrent.TimeoutException;
 @Component
 @Slf4j
 public class Consumer {
-
-    @RabbitListener(queues = "${rabbitmq.queue}", containerFactory = "singleListenerContainer")
+    @Value("${rabbitmq.queue}")
+    String queqeName;
+    @RabbitListener(queues = "direct" , containerFactory = "multiListenerContainer")
     public void receive(String message) {
-        log.info("消费者拿到消息: {}", message);
+        log.info("消费者拿到消息: {} 队列是: {}", message, queqeName);
     }
 }
 

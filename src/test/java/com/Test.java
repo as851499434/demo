@@ -27,9 +27,12 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void send() {
-        for (int i = 0; i < 10; i++) {
+        int i = 0;
+        while (true) {
             producer.send("消息：" + i);
+            i++;
         }
+
 
 
 
@@ -37,15 +40,15 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void test() throws EmailException {
-        HtmlEmail email = new HtmlEmail();
-        email.setHostName("smtp.163.com");
-        email.setCharset("utf-8");
-        email.addTo("773572103@qq.com");
-        email.setFrom("liangfan1104@163.com", "liangfan");
-        email.setAuthentication("liangfan1104@163.com", "PJOEFILKETLENMNZ");
-        email.setSubject("性感荷官，在线发牌");
-        email.setMsg("这是测试内容，顺便说一句黄潇旭吃屎");
-        email.send();
+//        HtmlEmail email = new HtmlEmail();
+//        email.setHostName("smtp.163.com");
+//        email.setCharset("utf-8");
+//        email.addTo("773572103@qq.com");
+//        email.setFrom("liangfan1104@163.com", "liangfan");
+//        email.setAuthentication("liangfan1104@163.com", "PJOEFILKETLENMNZ");
+//        email.setSubject("性感荷官，在线发牌");
+//        email.setMsg("这是测试内容，顺便说一句黄潇旭吃屎");
+//        email.send();
     }
 
 

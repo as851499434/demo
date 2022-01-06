@@ -22,7 +22,7 @@ public class Producer {
 
     public void send(String s) {
         log.info("发送的消息: {}", s);
-        amqpTemplate.convertAndSend("direct", s);
+        amqpTemplate.convertAndSend("amq.direct","direct",s);
         log.info("发送完成");
     }
 

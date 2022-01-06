@@ -41,7 +41,7 @@ public class RabbitmqConfig {
 
 
 
-    @Bean(name = "notifyQueue")
+    @Bean
     public Queue demoQueue(){
         return new Queue(env.getProperty("rabbitmq.queue"), true);
     }
@@ -53,7 +53,7 @@ public class RabbitmqConfig {
 
     @Bean
     public Binding demoBinding(){
-        return BindingBuilder.bind(demoQueue()).to(demoExchange()).with(env.getProperty("rabbitmq.exchange"));
+        return BindingBuilder.bind(demoQueue()).to(demoExchange()).with(env.getProperty("rabbitmq.queue"));
     }
 
 
