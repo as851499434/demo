@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.Date;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -31,6 +32,7 @@ public class Consumer {
         try {
             rabbitmqInfo = rabbitmqInfoMapper.selectById(id);
             rabbitmqInfo.setStatus(SUCCESS);
+            rabbitmqInfo.setUpdateTime(new Date());
             rabbitmqInfoMapper.updateById(rabbitmqInfo);
             log.info("消费者拿到消息: {} 交换机是: {}", rabbitmqInfo.getMessage(), rabbitmqInfo.getExchange());
         } catch (Exception e) {

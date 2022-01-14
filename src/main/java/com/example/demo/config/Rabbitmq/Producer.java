@@ -25,7 +25,7 @@ public class Producer {
 
     public void send(String s) {
         amqpTemplate.convertAndSend(exchange,routingKey,s);
-        log.info("发送的消息: {}", s);
+        log.info("发送id: {}", s);
     }
 
 }

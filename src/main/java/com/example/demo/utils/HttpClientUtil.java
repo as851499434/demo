@@ -31,11 +31,6 @@ import org.apache.http.util.EntityUtils;
  */
 @Slf4j
 public class HttpClientUtil {
-    public static void main(String[] args) {
-        HashMap<String,String> map = new HashMap();
-        map.put("message","paramFlag");
-        doPost("http://localhost:7778/rabbitmq-info/sendMessage", map);
-    }
 
     public static String doGet(String url, Map<String, String> param) {
         log.info("参数是:{}", param);
