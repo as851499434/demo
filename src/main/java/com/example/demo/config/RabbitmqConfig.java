@@ -48,7 +48,7 @@ public class RabbitmqConfig {
 
     @Bean
     public Binding demoBinding(){
-        return BindingBuilder.bind(demoQueue()).to(demoExchange()).with(env.getProperty("rabbitmq.queue"));
+        return BindingBuilder.bind(demoQueue()).to(demoExchange()).with(env.getProperty("rabbitmq.routing.key"));
     }
 
 
