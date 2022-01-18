@@ -1,13 +1,20 @@
 package com;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.example.demo.DemoApplication;
 import com.example.demo.config.Rabbitmq.Producer;
+import com.example.demo.utils.HttpClientUtil;
 import com.example.demo.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.UUID;
 
 
 /**
@@ -16,7 +23,7 @@ import javax.annotation.Resource;
  * @Description:
  */
 @Slf4j
-@SpringBootTest(classes = DemoApplication.class)
+//@SpringBootTest(classes = DemoApplication.class)
 public class Test {
     @Resource
     private RedisUtil redisUtil;
@@ -27,14 +34,13 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void send() {
-        int i = 0;
+        int i = 1;
         while (true) {
-            producer.send("消息：" + i);
+            HashMap<String,String> map = new HashMap();
+            map.put("message",UUID.randomUUID().toString());
+            HttpClientUtil.doPost("http://localhost:7778/rabbitmq-info/sendMessage", map);
             i++;
         }
-
-
-
 
     }
 
@@ -43,11 +49,11 @@ public class Test {
 //        HtmlEmail email = new HtmlEmail();
 //        email.setHostName("smtp.163.com");
 //        email.setCharset("utf-8");
-//        email.addTo("773572103@qq.com");
-//        email.setFrom("liangfan1104@163.com", "liangfan");
+//        email.addTo("1415128257@qq.com");
+//        email.setFrom("liangfan1104@163.com", "YouReallyFather");
 //        email.setAuthentication("liangfan1104@163.com", "PJOEFILKETLENMNZ");
-//        email.setSubject("性感荷官，在线发牌");
-//        email.setMsg("这是测试内容，顺便说一句黄潇旭吃屎");
+//        email.setSubject("来自某玩家的游戏邀请");
+//        email.setMsg("今晚要玩APEX吗？");
 //        email.send();
     }
 
