@@ -22,18 +22,18 @@ public class DemoApplication {
 	}
 
 	/*当端口启动后，直接跳转界面*/
-//	@EventListener({ApplicationReadyEvent.class})
-//	void applicationReadyEvent() {
-//		System.out.println("应用已经准备就绪 ... 启动浏览器");
-//		System.out.println("端口号是:" + port);
-//		String url = "http://localhost:"+port+"/index";
-//		Runtime runtime = Runtime.getRuntime();
-//		try {
-//			runtime.exec("rundll32 url.dll,FileProtocolHandler " + url);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	@EventListener({ApplicationReadyEvent.class})
+	void applicationReadyEvent() {
+		System.out.println("应用已经准备就绪 ... 启动浏览器");
+		System.out.println("端口号是:" + port);
+		String url = "http://localhost:"+port+"/index";
+		Runtime runtime = Runtime.getRuntime();
+		try {
+			runtime.exec("rundll32 url.dll,FileProtocolHandler " + url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 
 }
