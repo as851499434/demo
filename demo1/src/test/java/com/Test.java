@@ -1,18 +1,12 @@
 package com;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.example.demo.DemoApplication;
-import com.example.demo.config.Rabbitmq.Producer;
-import com.example.demo.utils.HttpClientUtil;
-import com.example.demo.utils.RedisUtil;
+import com.example.demo1.config.Rabbitmq.Producer;
+import com.example.demo1.utils.HttpClientUtil;
+import com.example.demo1.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.HtmlEmail;
-import org.springframework.boot.test.context.SpringBootTest;
+
 import javax.annotation.Resource;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.UUID;
 
