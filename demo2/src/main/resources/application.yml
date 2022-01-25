@@ -1,2 +1,44 @@
 server:
-  port: 7779
+  port: 80
+
+spring:
+  application:
+    name: demo2
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://116.62.141.102:3306/springCloud?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: Liangfan1104
+
+  mybatis:
+    typeAliasesPackage: com.example
+    mapperLocations: classpath*:mapper/**/*Mapper.xml
+    configLocation: classpath:mybatis/mybatis-config.xml
+
+  redis:
+    host: 116.62.141.102
+    port: 6379
+    password: Liangfan1104
+    timeout: 3600
+    database: 0
+
+  rabbitmq:
+    virtual-host: /
+    addresses: 116.62.141.102:5672
+    username: liangfan
+    password: liangfan
+
+# 自定义
+rabbitmq.exchange: amq.direct
+rabbitmq.queue: direct
+rabbitmq.routing.key: direct
+
+# 验证码类型 math 数组计算 char 字符
+captChar:
+  type: char
+
+
+
+
