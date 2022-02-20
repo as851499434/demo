@@ -2,7 +2,8 @@ package com.example.demo1.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.demo1.entity.PetInfo;
+import com.commons.demo_commons.entity.PetInfo;
+
 
 /**
  * <p>

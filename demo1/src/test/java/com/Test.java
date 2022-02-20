@@ -28,12 +28,12 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void send() {
-        int i = 1;
-        while (true) {
+        int i = 100;
+        while (i-- > 0) {
             HashMap<String,String> map = new HashMap();
             map.put("message",UUID.randomUUID().toString());
-            HttpClientUtil.doPost("http://localhost:7778/rabbitmq-info/sendMessage", map);
-            i++;
+            HttpClientUtil.doPost("http://localhost:8001/rabbitmq-info/sendMessage", map);
+            i--;
         }
 
     }

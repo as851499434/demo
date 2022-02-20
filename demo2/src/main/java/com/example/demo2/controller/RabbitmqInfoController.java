@@ -1,7 +1,7 @@
 package com.example.demo2.controller;
 
 
-import com.example.demo2.entity.CommonResult;
+import com.commons.demo_commons.entity.CommonResult;
 import com.example.demo2.service.IRabbitmqInfoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * <p>

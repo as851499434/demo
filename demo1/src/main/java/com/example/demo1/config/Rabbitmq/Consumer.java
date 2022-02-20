@@ -1,6 +1,6 @@
 package com.example.demo1.config.Rabbitmq;
 
-import com.example.demo1.entity.RabbitmqInfo;
+import com.commons.demo_commons.entity.RabbitmqInfo;
 import com.example.demo1.mapper.RabbitmqInfoMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

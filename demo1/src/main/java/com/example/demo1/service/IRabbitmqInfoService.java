@@ -1,7 +1,8 @@
 package com.example.demo1.service;
 
-import com.example.demo1.entity.RabbitmqInfo;
+
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.commons.demo_commons.entity.RabbitmqInfo;
 
 /**
  * <p>
@@ -17,5 +18,11 @@ public interface IRabbitmqInfoService extends IService<RabbitmqInfo> {
      * @param message
      */
     void sendMessage(String message);
+
+    /**
+     * 创建订单
+     * @param
+     */
+    void createPayment(String message);
 
 }

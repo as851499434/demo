@@ -1,7 +1,7 @@
 package com.example.demo1.controller;
 
 
-import com.example.demo1.entity.PetInfo;
+import com.commons.demo_commons.entity.PetInfo;
 import com.example.demo1.mapper.PetInfoMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

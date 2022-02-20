@@ -1,13 +1,12 @@
 package com.example.demo1.controller;
 
 
+import com.commons.demo_commons.entity.CommonResult;
 import com.example.demo1.service.IRabbitmqInfoService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -44,6 +43,23 @@ public class RabbitmqInfoController {
             e.printStackTrace();
         }
         return map;
+    }
+
+
+    /**
+     * 创建
+     */
+    @ApiOperation(value = "创建订单")
+    @PostMapping("/createPayment")
+    @ResponseBody
+    public CommonResult createPayment(@RequestBody String message)
+    {
+        try {
+            iRabbitmqInfoService.createPayment(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new CommonResult();
     }
 
 }

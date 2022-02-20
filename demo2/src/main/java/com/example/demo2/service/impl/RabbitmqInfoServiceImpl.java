@@ -4,8 +4,8 @@ package com.example.demo2.service.impl;
 import cn.hutool.core.date.DateTime;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.commons.demo_commons.entity.RabbitmqInfo;
 import com.example.demo2.config.Rabbitmq.Producer;
-import com.example.demo2.entity.RabbitmqInfo;
 import com.example.demo2.mapper.RabbitmqInfoMapper;
 import com.example.demo2.service.IRabbitmqInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -41,8 +41,8 @@ public class RabbitmqInfoServiceImpl extends ServiceImpl<RabbitmqInfoMapper, Rab
     public Integer sendMessage(String message) {
         RabbitmqInfo rabbitmqInfo = new RabbitmqInfo();
         rabbitmqInfo.setMessage(message);
-        rabbitmqInfo.setExchange(exchange);
-        rabbitmqInfo.setRoutingKey(routingKey);
+        rabbitmqInfo.setExchange("SpringCloud");
+        rabbitmqInfo.setRoutingKey("Customer");
         rabbitmqInfo.setCreateTime(new DateTime());
         int insert = rabbitmqInfoMapper.insert(rabbitmqInfo);
         if (insert == 1) {

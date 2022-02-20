@@ -19,8 +19,13 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
             <fileNamePattern>${log.path}/sys-info.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 日志最大的历史 60天 -->
-            <maxHistory>60</maxHistory>
+            <!-- 日志最大的历史 15天 -->
+            <maxHistory>15</maxHistory>
+            <!-- 单个日志文件最多 100MB, 15天的日志周期，最大不能超过20GB -->
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>20GB</totalSizeCap>
+            <!--重启清理日志文件-->
+            <cleanHistoryOnStart> true</cleanHistoryOnStart>
         </rollingPolicy>
         <encoder>
             <pattern>${log.pattern}</pattern>
