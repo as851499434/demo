@@ -3,8 +3,8 @@ package com.example.demo1_2.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.commons.demo_commons.entity.PetInfo;
-import com.example.demo1.mapper.PetInfoMapper;
-import com.example.demo1.service.IPetInfoService;
+import com.example.demo1_2.mapper.PetInfoMapper;
+import com.example.demo1_2.service.IPetInfoService;
 import org.springframework.stereotype.Service;
 
 /**

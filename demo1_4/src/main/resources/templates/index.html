@@ -39,7 +39,6 @@
 
     <script th:src="@{/js/jquery.min.js}"></script>
     <script th:src="@{/js/index.js}"></script>
-    <script th:src="@{/js/aes/aes.js}"></script>
     <link th:href="@{/css/index.css}" rel="stylesheet"/>
 </head>
 <body>
@@ -51,11 +50,7 @@
         <input autocomplete="off" type="password" required="required" placeholder="密码" name="p"></input>
         <input autocomplete="off" required="required" placeholder="验证码" name="c"></input> <img id="img" src="" alt="加载中" onclick="getInmage()">
         <button class="but" type="submit">登录</button>
-
     </form>
-
 </div>
 </body>
-
-
 </html>
